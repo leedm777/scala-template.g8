@@ -1,7 +1,7 @@
 // -*- scala -*-
 // Copyright (c) $year$, $copyright$
 
-name := "$name$"
+name := "$project$-$name$"
 
 organization := "$organization$"
 
@@ -18,7 +18,7 @@ credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 
 publishMavenStyle := true
 
-initialCommands in console := "import $organization$._"
+initialCommands in console := "import $organization$._; import $project$._; import $name$._"
 
 // Akka deps
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
@@ -46,5 +46,3 @@ libraryDependencies ++= {
 //resolvers += "Local Maven" at Path.userHome.asFile.toURI.toURL + ".m2/repository"
 
 testListeners <<= target.map(t => Seq(new eu.henkelmann.sbt.JUnitXmlTestsListener(t.getAbsolutePath)))
-
-initialCommands in console := "import $organization$._"

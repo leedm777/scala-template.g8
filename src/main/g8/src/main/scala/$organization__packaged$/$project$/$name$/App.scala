@@ -1,5 +1,5 @@
 // Copyright (c) $year$, $copyright$
-package $package$
+package $organization$.$name$
 
 object App {
   def main(args: Array[String]) {
